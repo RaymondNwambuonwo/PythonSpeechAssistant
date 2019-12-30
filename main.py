@@ -8,4 +8,4 @@ with sr.Microphone() as source:
     print("Say saomething")  # Prompt User
     audio = r.listen(source)  # Audio variable with source
     voice_data = r.recognize_google(audio)  # variable using recognize google
-    print(voice_data)
+    print(voice_data)  # shows what user said
