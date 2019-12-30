@@ -4,15 +4,22 @@ import speech_recognition as sr
 r = sr.Recognizer()
 
 # Using microphone as source of audio input
-with sr.Microphone() as source:
-    print("Say saomething")  # Prompt User
-    audio = r.listen(source)  # Audio variable with source
-   # try block and this allows for unrecognizable speech and throws an error
-    try:
-        # variable using recognize google
-        voice_data = r.recognize_google(audio)
-        print(voice_data)  # shows what user said
-    except sr.UnknownValueError:
-        print("Sorry, I did not catch that")
-    except sr.RequestError:
-        print("My apologies, my speech is on the fritz")
+
+
+def record_audio():
+    with sr.Microphone() as source:
+        audio = r.listen(source)  # Audio variable with source
+        voice_data = ''  # initialize voice data with empty string
+        try:  # try block and this allows for unrecognizable speech and throws an error
+            # variable using recognize google
+            voice_data = r.recognize_google(audio)
+        except sr.UnknownValueError:  # this is if system does not understand what was said
+            print("Sorry, I did not catch that")
+        except sr.RequestError:
+            print("My apologies, my speech is on the fritz")
+        return voice_data
+
+
+print("Hey whats up, how can I help you?")
+voice_data = record_audio()
+print(voice_data)
