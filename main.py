@@ -31,14 +31,14 @@ def respond(voice_data):  # function for response from Claudia
         print(ctime())
     if 'search' in voice_data:
         search = record_audio('What would you like to search?')
-        url = 'https://google.com/search?q= ' + search
+        url = 'https://google.com/search?q=' + search
         webbrowser.get().open(url)
-        print('This is what I found regarding your search ' + search)
+        print('This is what I found regarding your search' + search)
     if 'get location' in voice_data:
         location = record_audio('What location would you like to find?')
-        url = 'https://google.nl/maps/place/ ' + location + '/&amp;'
+        url = 'https://google.nl/maps/place/' + location + '/&amp;'
         webbrowser.get().open(url)
-        print('This is the location of ' + search)
+        print('This is the location of' + search)
 
 
 print('Hey whats up, how can I help you?')
