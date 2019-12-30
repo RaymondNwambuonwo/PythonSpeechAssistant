@@ -25,6 +25,6 @@ def respond(voice_data):
         print('My name is Claudia')
 
 
-print("Hey whats up, how can I help you?")
+print('Hey whats up, how can I help you?')
 voice_data = record_audio()
 respond(voice_data)
