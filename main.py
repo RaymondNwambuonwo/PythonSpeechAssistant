@@ -1,4 +1,5 @@
 import speech_recognition as sr
+from time import ctime
 
 # initialize recognizer class which is responsible for recognizing speech
 r = sr.Recognizer()
@@ -20,7 +21,7 @@ def record_audio():
         return voice_data
 
 
-def respond(voice_data):
+def respond(voice_data):  # function for response from Claudia
     if 'what is your name' in voice_data:
         print('My name is Claudia')
 
