@@ -33,6 +33,7 @@ def respond(voice_data):  # function for response from Claudia
         search = record_audio('What would you like to search?')
         url = 'https://google.com/search?q=' + search
         webbrowser.get().open(url)
+        print('This is what I found regarding your search' + search)
 
 
 print('Hey whats up, how can I help you?')
