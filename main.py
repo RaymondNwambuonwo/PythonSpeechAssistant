@@ -8,8 +8,10 @@ r = sr.Recognizer()
 # Using microphone as source of audio input
 
 
-def record_audio():
+def record_audio(ask=False):
     with sr.Microphone() as source:
+        if ask:
+            print(ask)
         audio = r.listen(source)  # Audio variable with source
         voice_data = ''  # initialize voice data with empty string
         try:  # try block and this allows for unrecognizable speech and throws an error
@@ -28,6 +30,9 @@ def respond(voice_data):  # function for response from Claudia
     if 'what time is it' in voice_data:
         print(ctime())
     if 'search' in voice_data:
+        search = record_audio('What would you like to search?')
+        url = 'https://google.com/search?q=' + search
+        webbrowser.get().open(url)
 
 
 print('Hey whats up, how can I help you?')
