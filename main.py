@@ -1,4 +1,5 @@
 import speech_recognition as sr
+import webbrowser
 from time import ctime
 
 # initialize recognizer class which is responsible for recognizing speech
@@ -26,6 +27,7 @@ def respond(voice_data):  # function for response from Claudia
         print('My name is Claudia')
     if 'what time is it' in voice_data:
         print(ctime())
+    if 'search' in voice_data:
 
 
 print('Hey whats up, how can I help you?')
