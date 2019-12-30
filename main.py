@@ -24,6 +24,8 @@ def record_audio():
 def respond(voice_data):  # function for response from Claudia
     if 'what is your name' in voice_data:
         print('My name is Claudia')
+    if 'what time is it' in voice_data:
+        print(ctime())
 
 
 print('Hey whats up, how can I help you?')
