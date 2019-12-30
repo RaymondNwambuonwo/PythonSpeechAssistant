@@ -1,4 +1,4 @@
-# Python Speech Assistant Claudia
+# Python Speech Assistant
 
 My first time working with speech recognition and text-to-speech and it was a great experience and very informative. This is a Python app that uses speech recognition and the Google text-to-speech API
 
