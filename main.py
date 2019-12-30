@@ -1,5 +1,6 @@
 import speech_recognition as sr
 import webbrowser
+import time
 from time import ctime
 
 # initialize recognizer class which is responsible for recognizing speech
@@ -33,14 +34,16 @@ def respond(voice_data):  # function for response from Claudia
         search = record_audio('What would you like to search?')
         url = 'https://google.com/search?q=' + search
         webbrowser.get().open(url)
-        print('This is what I found regarding your search' + search)
+        print('This is what I found regarding your search for ' + search)
     if 'get location' in voice_data:
         location = record_audio('What location would you like to find?')
         url = 'https://google.nl/maps/place/' + location + '/&amp;'
         webbrowser.get().open(url)
-        print('This is the location of' + search)
+        print('This is the location of ' + location)
 
 
+time.sleep(1)  # delays execution of funtion for given amount of time
 print('Hey whats up, how can I help you?')
-voice_data = record_audio()
-respond(voice_data)
+while 1:
+    voice_data = record_audio()
+    respond(voice_data)
