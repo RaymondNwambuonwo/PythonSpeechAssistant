@@ -26,7 +26,8 @@ These are the commands that are currently available to use with the speech assis
 
 - What is your name?
 - What time is it
-- Search
+- Google Search
+- Youtube Search
 - Find Location
 - Exit
 
