@@ -40,6 +40,8 @@ def respond(voice_data):  # function for response from Claudia
         url = 'https://google.nl/maps/place/' + location + '/&amp;'
         webbrowser.get().open(url)
         print('This is the location of ' + location)
+    if 'exit' in voice_data:
+        exit()
 
 
 time.sleep(1)  # delays execution of funtion for given amount of time
