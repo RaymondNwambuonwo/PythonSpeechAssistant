@@ -20,6 +20,11 @@ def record_audio():
         return voice_data
 
 
+def respond(voice_data):
+    if 'what is your name' in voice_data:
+        print('My name is Claudia')
+
+
 print("Hey whats up, how can I help you?")
 voice_data = record_audio()
-print(voice_data)
+respond(voice_data)
