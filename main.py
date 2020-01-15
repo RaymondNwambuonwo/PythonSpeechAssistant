@@ -46,7 +46,7 @@ def record_audio(ask=False):
 
 def claudia_speak(audio_string):
     tts = gTTS(text=audio_string, lang='en')  # the text to speech(voice)
-    r = random.randint(1, 30000000)
+    r = random.randint(1, 20000000)
     audio_file = 'audio' + str(r) + '.mp3'
     tts.save(audio_file)  # saves file as mp3
     playsound.playsound(audio_file)  # plays the audio file
@@ -58,11 +58,11 @@ def respond(voice_data):  # function for response from Claudia
 
     if responsive(['hey', 'hi', 'hello']):
         greetings = [f"hey, how can I help you {person_obj.name}", f"hey, what's up? {person_obj.name}",
-                     f"I'm listening {person_obj.name}", f"how can I help you? {person_obj.name}", f"hello {person_obj.name}"]
+                     f"I'm listening {person_obj.name}", f"how can I help you? {person_obj.name}"]
         greet = greetings[random.randint(0, len(greetings)-1)]
         claudia_speak(greet)
 
-    if responsive(["what is your name", "what's your name", "tell me your name", "your name is"]):
+    if responsive(["what is your name", "tell me your name"]):
         if person_obj.name:
             claudia_speak("my name is Claudia")
         else:
